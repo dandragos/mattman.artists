@@ -1,0 +1,259 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+
+
+/* Ajustează înălțimea secțiunii astfel încât să încapă două pe ecran */
+section.artist {
+  height: 80vh; /* Ajustăm înălțimea la 50% din înălțimea vizibilă a ecranului */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative; /* Adăugăm position:relative pentru a putea suprapune textul */
+}
+
+.artist-bg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center top;
+  filter: grayscale(100%);
+  transition: opacity 0.4s ease;
+  opacity: 0.7;
+}
+
+/* Ajustăm spațiul dintre secțiuni */
+section.artist:not(:last-child) {
+  margin-bottom: 0vh; /* Adăugăm un spațiu de 2% între secțiuni */
+}
+
+section.artist:hover .artist-bg {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Stil pentru textul din secțiune (poți personaliza acest stil) */
+.section-text {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  color: white;
+  font-size: 24px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font: comic-sans;
+}
+
+/* ... Codul anterior ... */
+
+.section-content {
+  font-family: Arial, sans-serif; /* Aplicăm fontul Arial */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centrăm vertical și orizontal */
+  color: white;
+  z-index: 2;
+  text-align: center;
+}
+
+.section-content h2 {
+  font-family: Arial, sans-serif; /* Aplicăm fontul Arial */
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: normal; /* Eliminăm boldul, dacă a fost aplicat anterior */
+  color:black;
+}
+
+.section-content p {
+  font-family: Arial, sans-serif; /* Aplicăm fontul Arial */
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: normal; /* Eliminăm boldul, dacă a fost aplicat anterior */
+  color:white;
+}
+
+/* Restul stilurilor tale */
+
+/* Restul stilurilor tale */
+
+.buttons {
+  display: flex;
+  flex-direction: column; /* Asezam butoanele in coloana */
+  align-items: flex-start; /* Aliniem butoanele la stanga */
+  margin-top: 20px;
+}
+
+
+
+.button {
+  background-color: #B6EAE1;
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  margin: 10px 0; /* Spatiere intre butoane */
+  border: none;
+  border-radius: 0;
+  transition: background-color 0.3s;
+  width: fit-content; /* Butonul va avea latimea minima necesara textului */
+  text-align: left; /* Aliniem textul la stanga */
+  font-family: Arial, sans-serif; /* Aplicam fontul Arial */
+  font-weight: normal; /* Facem textul din butoane bold */
+}
+
+/* Stil pentru butoanele în stare alb-negru */
+section.artist:not(:hover) .button {
+  filter: grayscale(100%);
+  opacity: 0.7;
+}
+
+/* Stil pentru butoanele atunci când mouse-ul este pe ele */
+.button:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Stil pentru secțiunile care nu sunt hoverate */
+section.artist:not(:hover) {
+  filter: grayscale(100%);
+  opacity: 0.7;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  transition: top 0.5s;
+  z-index: 3000;
+  display: flex;
+  justify-content: space-between; /* Aliniere în stânga și dreapta */
+  align-items: center; /* Aliniere verticală pe axa Y */
+
+}
+
+
+.header-left h1 {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  position: absolute;
+  bottom: 20px;
+  z-index: 1;
+}
+
+.header-right {
+  text-align: right; /* Aliniere text la dreapta */
+  margin-right: 20px; /* Spațiu la dreapta */
+}
+
+.header-right p {
+  font-size: 15px;
+  padding: 20px;
+}
+
+
+.header h1{
+  font-family: Arial, sans-serif; /* Aplicăm fontul Arial */
+  font-size: 20px; /* Setăm dimensiunea la 15px */
+  position: absolute;
+  bottom: 20px;
+  z-index: 1;
+}
+
+
+/* Adaugă această clasă pentru a ascunde header-ul când se face scroll în jos */
+.header-hidden {
+  top: -300px; /* Sau o valoare negativă suficient de mare pentru a ascunde complet header-ul */
+}
+
+.logo {
+  width: 60px; /* Lățimea logo-ului */
+  height: 40px; /* Înălțimea logo-ului */
+  margin-right: 10px; /* Spațiu între logo și text */
+  margin-left: 10px; /* Spațiu între logo și text */
+  margin-top: 0px; /* Spațiu de sus pentru logo */
+  position: relative;
+  top:10px;
+}
+
+
+.footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer p{
+  font-size: 1.5vh;
+}
+
+
+
+
+
+@media screen and (max-width: 850px) {
+
+  .header p{
+    font-size: 0px;
+  }
+  
+  .section-content h2{
+  font-size: 18px;
+  }
+
+  .section-content p{
+    font-size: 18px;
+    }
+  
+    .button {
+      font-size: 18px;
+      padding: 7px 15px;
+      margin: 7px 0;
+
+    }
+}
+
+
+
+@media screen and (max-width: 400px) and (max-width: 650px){
+
+  .header h1 {
+    font-size: 15px; /* Dimensiunea textului pentru ecrane mai mici */
+    top: 6vh;
+  }
+  .header p{
+    font-size: 0px;
+  }
+  .logo{
+    width: 30px;
+    height: 18px;
+    margin-right: 2px; /* Spațiu între logo și text */
+  margin-left: 2px; /* Spațiu între logo și text */
+  margin-top: 0px; /* Spațiu de sus pentru logo */
+  position: relative;
+  top:2px;
+  bottom:2px;
+  }
+  .header{
+    padding:5vh;
+    size: 10px;
+    height: -45px;
+    
+  }
+
+  .artist-bg {
+    width: 100%;
+    height: 100%;
+    background-position: center left;
+  }
+}
