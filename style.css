@@ -67,6 +67,7 @@ section.artist:hover .artist-bg {
   margin-bottom: 10px;
   font-weight: normal; /* Eliminăm boldul, dacă a fost aplicat anterior */
   color:black;
+  text-decoration: double;
 }
 
 .section-content p {
@@ -75,6 +76,7 @@ section.artist:hover .artist-bg {
   margin-bottom: 10px;
   font-weight: normal; /* Eliminăm boldul, dacă a fost aplicat anterior */
   color:white;
+  text-decoration: double;
 }
 
 /* Restul stilurilor tale */
@@ -209,6 +211,7 @@ section.artist:not(:hover) {
   
   .section-content h2{
   font-size: 18px;
+  color: white;
   }
 
   .section-content p{
@@ -225,7 +228,7 @@ section.artist:not(:hover) {
 
 
 
-@media screen and (max-width: 400px) and (max-width: 650px){
+@media screen and (max-width: 425px) and (max-width: 800px){
 
   .header h1 {
     font-size: 15px; /* Dimensiunea textului pentru ecrane mai mici */
@@ -255,5 +258,15 @@ section.artist:not(:hover) {
     width: 100%;
     height: 100%;
     background-position: center left;
+
   }
+
+  section.artist:not(:hover) .button {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+
 }
+
+
+
