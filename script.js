@@ -55,4 +55,45 @@ function downloadFile(fileUrl, fileName) {
 
 
 
+document.getElementById("myButton").addEventListener("click", function(event) {
+  event.preventDefault(); // Opresc comportamentul implicit al legăturii
+  // Aici poți adăuga orice alte acțiuni sau funcționalități pe care le dorești
+  // de exemplu, să deschizi o fereastră modală
+});
+
+
+// Functia pentru verificarea daca un element este vizibil in viewport
+function isElementInViewport(el) {
+  var rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+// Functia care va fi apelata la scroll pentru a verifica vizibilitatea sectiunilor
+function checkSectionsVisibility() {
+  var sections = document.querySelectorAll(".artist");
+
+  sections.forEach(function(section) {
+    if (isElementInViewport(section)) {
+      section.classList.add("visible"); // Adaugam clasa "visible" pentru sectiunile vizibile
+    } else {
+      section.classList.remove("visible");
+    }
+  });
+}
+
+// Adaugam un eveniment de scroll care apeleaza functia de verificare la scroll
+window.addEventListener("scroll", function() {
+  checkSectionsVisibility();
+});
+
+// Apeleaza initial functia pentru a verifica sectiunile la incarcarea paginii
+checkSectionsVisibility();
+
+
+
 
